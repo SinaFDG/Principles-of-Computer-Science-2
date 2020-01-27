@@ -1,8 +1,10 @@
+#compress the string!
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import groupby
 print(*[(len(list(c)), int(k)) for k, c in groupby(input())])
 
 --------------
+#iterables and iterators
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import combinations
 N = int(input())
@@ -13,6 +15,7 @@ F = filter(lambda c: 'a' in c, C)
 print("{0:.3}".format(len(list(F))/len(C)))
 
 ---------------
+#itertools.combinations()
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import combinations
 s, k = input().split()
@@ -21,6 +24,7 @@ for i in range(1, int(k)+1):
         print(''.join(j))
 
 -----------------
+#itertools.combinations_with_replacement()
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import combinations_with_replacement
 s, k = input().split()
@@ -28,12 +32,14 @@ for c in combinations_with_replacement(sorted(s), int(k)):
     print("".join(c))
 
 -----------------
+#itertools.permutations()
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import permutations
 s,n = input().split()
 print(*[''.join(i) for i in permutations(sorted(s),int(n))],sep='\n')
 
 ------------------
+#itertools.product()
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import product
 A = list(map(int, input().split()))
@@ -41,6 +47,7 @@ B = list(map(int, input().split()))
 print(*product(A, B))
 
 -----------------
+#maximize it!
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from itertools import product
 K,M = map(int,input().split())
