@@ -1,0 +1,227 @@
+#caesar cipher
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the caesarCipher function below.
+def caesarCipher(s, k):
+    alpha='abcdefghijklmnopqrstuvwxyz'
+    alphab='abcdefghijklmnopqrstuvwxyz'
+    Alpha= alpha.upper()
+    rotated=''
+    A=0
+    if k==0:
+        return s
+        sys.exit()
+    while A!=k:
+        rotated=alphab[1:]+alphab[:1]
+        alphab= rotated
+        A+=1
+    
+
+    Rotated= rotated.upper()
+    encrypted=''
+    for a in s:
+        if a in alpha:
+            index= alpha.index(a)
+            encrypted+=rotated[index]
+        elif a in Alpha:
+            index= Alpha.index(a)
+            encrypted+=Rotated[index]
+        else:
+            encrypted+=a
+    return encrypted
+        
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    s = input()
+
+    k = int(input())
+
+    result = caesarCipher(s, k)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+--------------
+#camelcase
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the camelcase function below.
+def camelcase(s):
+    Count = 1
+    for i in s:
+        if i.isupper():
+            Count+=1
+    return Count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = camelcase(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+--------------
+#hackerrank in a string!
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the hackerrankInString function below.
+def hackerrankInString(s):
+    if re.search(r'.*h.*a.*c.*k.*e.*r.*r.*a.*n.*k.*', s):
+        return "YES"
+    else:
+        return "NO"
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        s = input()
+
+        result = hackerrankInString(s)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
+
+--------------
+#strong password
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the minimumNumber function below.
+def minimumNumber(n, password): 
+    # Return the minimum number of characters to make the password strong
+    Points = 0
+    Size,Upper,Lower,Numbers,Special = False,False,False,False,False
+    if n>6:
+        Size = True
+    for i in password:
+        if i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            Upper= True
+        if i in 'abcdefghijklmnopqrstuvwxyz':
+            Lower= True
+        if i in "0123456789":
+            Numbers = True
+        if i in "!@#$%^&*()-+":
+            Special = True
+    for i in [Size,Upper,Lower,Numbers,Special]:
+        if i:
+            Points +=1
+    if Size:
+        return (5-Points)
+    else:
+        if (6-n) >= (5-Points):
+            return (6-n)
+        else:
+            return (4-Points)
+  
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    password = input()
+
+    answer = minimumNumber(n, password)
+
+    fptr.write(str(answer) + '\n')
+
+    fptr.close()
+
+-------------
+#two characters
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the alternate function below.
+def alternate(s):
+    Ch = set()
+    Final=[]
+    for n in range(len(s)):
+        Ch.add(s[n])
+    S=list(s)
+    Ch=list(Ch)
+    for i in range(len(Ch)):
+        for j in range(len(Ch)):
+            if i==j:
+                break
+            lst=[]
+            OK=True
+            for m in S:
+                if m==Ch[i] or m==Ch[j]:
+                    lst.append(m)
+            pre = 0
+            for e in range(1,len(lst)):
+                if lst[e]==lst[pre]:
+                    OK= False
+                pre = e
+            if OK:
+                Final.append(lst)
+    if len(Final)==0:
+        return 0
+    else:
+        final=[]
+        for l in Final:
+            final.append(len(l))
+        result=Final[final.index(max(final))]
+        return len(''.join(result))
+                
+            
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    l = int(input().strip())
+
+    s = input()
+
+    result = alternate(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+
+
