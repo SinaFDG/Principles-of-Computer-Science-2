@@ -1,0 +1,126 @@
+#check strict superset
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a = set(map(str, input().split(' ')))
+is_strict_superset = []
+for i in range(int(input())):
+    is_strict_superset.append(a.issuperset(set(map(str, input().split(' ')))))
+print(all(is_strict_superset))
+
+-----------------
+#check subset
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+for _ in range(int(input())):
+    x, a, z, b = input(), set(input().split()), input(), set(input().split())
+    print(a.issubset(b))
+
+----------------
+#introduction to set
+def average(array):
+    # your code goes here
+    return sum(set(array)) / len(set(array))
+
+-----------------
+#no idea!
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n, m = input().split()
+sc_ar = input().split()
+A = set(input().split())
+B = set(input().split())
+print (sum([(i in A) - (i in B) for i in sc_ar]))
+
+----------------
+#set .add()
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+s = set()
+for i in range(n):
+    string = input()
+    s.add(string)
+print(len(s))
+
+----------------
+#set .difference()operation
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n1 = int(input())
+set_1 = set(map(int,input().split()))
+n2 = int(input())
+set_2 = set(map(int,input().split()))
+print(len(set_1-set_2))
+
+----------------
+#set .discard() .remove & .pop()
+n = int(input())
+s = set(map(int, input().split()))
+for i in range(int(input())):
+    eval('s.{0}({1})'.format(*input().split()+['']))
+print(sum(s))
+
+---------------
+#set .intersection() operation
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+num1, st1, num2, st2 = (set(input().split()) for i in range(4))
+print (len(st1.intersection(st2)))
+
+---------------
+#set .symmetric_difference() operation
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+_, a = input(), set(input().split())
+_, b = input(), set(input().split())
+print(len(a.symmetric_difference(b)))
+
+--------------
+#set .union() operation
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+print(len((set(input().split()) if input() != '-1' else '')|(set(input().split()) if input() != '-1' else '')))
+
+--------------
+#set mutations
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+m, base_set = input(), set(map(int, input().split()))
+for i in range(0,int(input())):
+    exec("base_set.{0}({1})".format(input().split()[0], set(map(int, input().split())) ))
+print(sum(base_set))
+
+--------------
+#symmetric difference
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a,b = [set(input().split()) for _ in range(4)][1::2]
+print ('\n'.join(sorted(a^b, key=int)))
+
+--------------
+#the captain's room
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+k = int(input())
+arr = list(map(int, input().split()))
+myset = set(arr)
+print(((sum(myset)*k)-(sum(arr)))//(k-1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
