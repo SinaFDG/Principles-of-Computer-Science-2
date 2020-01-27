@@ -1,3 +1,4 @@
+#find the runner-up score!
 if __name__ == '__main__':
     n = int(input())
     arr = map(int, input().split())
@@ -9,6 +10,7 @@ while r == max (l):
 print (max (l))
 
 ------------
+#finding the percentage
 if __name__ == '__main__':
     n = int(input())
     student_marks = {}
@@ -22,6 +24,7 @@ a = float(sum(student_marks[query_name]))
 print ('%.2f'%(a/3))
 
 ---------------
+#list comprehensions
 if __name__ == '__main__':
     x = int(input())
     y = int(input())
@@ -31,6 +34,7 @@ if __name__ == '__main__':
 print([[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i+j+k!=n])
 
 ---------------
+#lists
 if __name__ == '__main__':
     N = int(input())
 arr = []
@@ -61,6 +65,7 @@ for a in range(N):
         print (arr)
 
 -----------------
+#nested list
 marksheet = []
 scorelist =[]
 
@@ -77,6 +82,7 @@ for b,c in sorted(marksheet) :
         print (b)
 
 -------------
+#uples
 if __name__ == '__main__':
     n = int(input())
     integer_list = map(int, input().split())
