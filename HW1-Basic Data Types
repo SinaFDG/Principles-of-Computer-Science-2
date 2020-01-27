@@ -1,0 +1,87 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+
+l = list(arr)
+r = max (l)
+while r == max (l):
+    l.remove(max(l))
+print (max (l))
+
+------------
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+
+a = float(sum(student_marks[query_name]))
+print ('%.2f'%(a/3))
+
+---------------
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+
+print([[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i+j+k!=n])
+
+---------------
+if __name__ == '__main__':
+    N = int(input())
+arr = []
+for a in range(N):
+    inputs = input().split()
+    if len(inputs) == 1 :
+        command = inputs[0]
+    if len(inputs) == 2 :
+        command = inputs[0]
+        e = int(inputs[1])
+    if len(inputs) == 3 :
+        command = inputs[0]
+        i = int(inputs[1])
+        e = int(inputs[2]) 
+    if command == 'insert':
+        arr.insert(i,e)
+    elif command == 'remove':
+        arr.remove(e)
+    elif command == 'append':
+        arr.append (e)
+    elif command == 'sort':
+        arr.sort()
+    elif command == 'pop':
+        arr.pop()
+    elif command == 'reverse':
+        arr.reverse()
+    elif command == 'print':
+        print (arr)
+
+-----------------
+marksheet = []
+scorelist =[]
+
+if __name__ == '__main__':
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+
+        marksheet += [[name, score]]
+        scorelist += [score]
+a = sorted(list(set(scorelist))) [1]
+for b,c in sorted(marksheet) :
+    if c == a :
+        print (b)
+
+-------------
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = map(int, input().split())
+t = tuple(integer_list)
+print(hash(t))
+
+
+
