@@ -1,3 +1,4 @@
+#find angle mbc
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 import math
 AB,BC=int(input()),int(input())
@@ -7,6 +8,7 @@ degree=chr(176)
 print(res,degree, sep='')
 
 --------------
+#integers come in all sizes
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 a = int(input())
 b = int(input())
@@ -15,6 +17,7 @@ d = int(input())
 print (pow(a, b) + pow(c, d))
 
 ---------------
+#mod divmod
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 a = int(input())
 b = int(input())
@@ -24,11 +27,13 @@ print(a%b)
 print(m)
 
 --------------
+#polar coordinates
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 import cmath
 print(*cmath.polar(complex(input())), sep='\n')
 
 --------------
+#power - mod power
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 a = int(input())
 b = int(input())
@@ -39,10 +44,12 @@ if b >= 0:
     print(j)
 
 -------------
+#triangle quest 2
 for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
     print (pow(((pow(10,i)-1)//9),2))
 
 -------------
+#triangle quest
 for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
     print((10**(i)//9)*i)
 
