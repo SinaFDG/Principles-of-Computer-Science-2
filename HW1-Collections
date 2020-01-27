@@ -1,0 +1,97 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+from collections import Counter
+shoes_qty = input()
+shop_slist = Counter(list(map(int, input().split())))
+usrs_qty = input()
+earned = 0
+if re.match(r'^[1-9][0-9]{0,3}', shoes_qty) and re.match(r'^[1-9][0-9]{0,2}|^1000', usrs_qty):
+    for usr in range(0, int(usrs_qty)):
+        usr_size, usr_price = map(int, input().split())
+        if shop_slist[usr_size] > 0:
+            earned += usr_price
+            shop_slist[usr_size] -= 1
+    print(earned)
+
+---------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque
+d = deque()
+for _ in range(int(input())):
+    inp = input().split()
+    getattr(d, inp[0])(*[inp[1]] if len(inp) > 1 else [])
+print(*[item for item in d])
+
+----------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import collections, statistics
+print('%.2f' % statistics.mean(next((int(student(*row).MARKS) for row in (input().split() for i in range(size))) for size, student in [[int(input()), collections.namedtuple('Student', input())]])))
+
+----------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+d = OrderedDict()
+for _ in range(int(input())):
+    item, space, quantity = input().rpartition(' ')
+    d[item] = d.get(item, 0) + int(quantity)
+for item, quantity in d.items():
+    print(item, quantity)
+
+-----------------
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+    s = input()
+    letters = [0] * 26
+    for letter in s:
+        letters[ord(letter) - ord('a')] += 1
+    for _ in range(3):
+        max_letter = max(letters)
+        for index in range(26):
+            if max_letter == letters[index]:
+                print (chr(ord('a') + index), max_letter)
+                letters[index] = -1
+                break
+
+-------------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict
+n, m = map(int, input().split())
+d = defaultdict(lambda: -1)
+for i in range(1, n+1):
+    word = input()
+    d[word] = d[word] + ' ' + str(i) if word in d else str(i)
+for _ in range(m):
+    print(d[input()])
+
+-------------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+for t in range(int(input())):
+    input()
+    lst = [int(i) for i in input().split()]
+    min_list = lst.index(min(lst))
+    left = lst[:min_list]
+    right = lst[min_list+1:]
+    if left == sorted(left,reverse=True) and right == sorted(right):
+        print("Yes")
+    else:
+        print("No")
+
+--------------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter, OrderedDict
+class OrderedCounter(Counter, OrderedDict):
+    pass
+d = OrderedCounter(input() for _ in range(int(input())))
+print(len(d))
+print(*d.values())
+
+
