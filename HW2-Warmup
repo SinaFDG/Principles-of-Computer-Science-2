@@ -1,0 +1,319 @@
+#a very big sum
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the aVeryBigSum function below.
+def aVeryBigSum(ar):
+    Sum = 0
+    for i in ar:
+        Sum += i
+    return Sum
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = aVeryBigSum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+------------
+#birthday cake candles
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the birthdayCakeCandles function below.
+def birthdayCakeCandles(ar):
+    Max = max(ar)
+    count = ar.count(Max)
+    return count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+-------------
+#compare the triplets
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the compareTriplets function below.
+def compareTriplets(a, b):
+    Result = []
+    Alice = 0
+    Bob = 0
+    for i in range(len(a)):
+        if a[i] > b[i]:
+            Alice += 1
+        elif a[i] < b[i]:
+            Bob += 1
+        else:
+            pass
+    Result.append(Alice)
+    Result.append(Bob)
+    return Result
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+
+    b = list(map(int, input().rstrip().split()))
+
+    result = compareTriplets(a, b)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+----------------
+#diagonal difference
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the diagonalDifference function below.
+def diagonalDifference(arr):
+    suml=0
+    sumr=0
+    for i in range(len(arr)):
+        suml+= arr[i][i]
+        sumr+= arr[i][len(arr)-1-i]
+    diff = abs(suml-sumr)
+    return diff
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+---------------
+#mini-max sum
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr):
+    Min = 0
+    Max = 0
+    minlst = []
+    minlst += arr
+    for i in range(len(arr)-1):
+        Min += min(minlst)
+        minlst.remove(min(minlst))
+    for i in range(len(arr)-1):
+        Max += max(arr)
+        arr.remove(max(arr))
+    print(str(Min)+' '+str(Max))
+
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
+
+---------------
+#plus minus
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    neg= 0
+    pos= 0
+    zer= 0
+    for i in arr:
+        if i==0:
+            zer+=1
+        if i <0:
+            neg+=1
+        if i >0:
+            pos+=1
+    print(round(pos/len(arr),6))
+    print(round(neg/len(arr),6))
+    print(round(zer/len(arr),6))
+    
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
+
+--------------
+#simple array sum
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the simpleArraySum function below.
+#
+def simpleArraySum(ar):
+    return sum(ar)
+    #
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = simpleArraySum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+--------------
+#solve me first
+def solveMeFirst(a,b):
+	# Hint: Type return a+b below
+    return a+b
+
+num1 = int(input())
+num2 = int(input())
+res = solveMeFirst(num1,num2)
+print(res)
+
+-------------
+#staircase
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the staircase function below.
+def staircase(n):
+    for i in range(n):
+        print(((i+1)*"#").rjust(n))
+
+if __name__ == '__main__':
+    n = int(input())
+
+    staircase(n)
+
+--------------
+#time conversion
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s):
+    s = str(s)
+    S = s.split(':')
+    if S[2].find('AM')!= -1:
+        if S[0] == '12':
+            S[0] = '00'
+        return (S[0]+':'+S[1]+':'+S[2][0]+S[2][1])
+    else:
+        if S[0] == '12':
+            return (S[0]+':'+S[1]+':'+S[2][0]+S[2][1])
+        else:
+            S[0] = str(int(S[0])+12)
+            return (S[0]+':'+S[1]+':'+S[2][0]+S[2][1])
+
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
