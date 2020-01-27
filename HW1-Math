@@ -1,0 +1,54 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+AB,BC=int(input()),int(input())
+hype=math.hypot(AB,BC)                     
+res=round(math.degrees(math.acos(BC/hype)))
+degree=chr(176)                            
+print(res,degree, sep='')
+
+--------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+print (pow(a, b) + pow(c, d))
+
+---------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a = int(input())
+b = int(input())
+m = divmod(a, b)
+print(a//b)
+print(a%b)
+print(m)
+
+--------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import cmath
+print(*cmath.polar(complex(input())), sep='\n')
+
+--------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a = int(input())
+b = int(input())
+m = int(input())
+print (pow(a, b))
+if b >= 0:
+    j = pow(a, b, m)
+    print(j)
+
+-------------
+for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print (pow(((pow(10,i)-1)//9),2))
+
+-------------
+for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print((10**(i)//9)*i)
+
+
+
+
+
+
+
